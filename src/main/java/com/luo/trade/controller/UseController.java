@@ -2,11 +2,14 @@ package com.luo.trade.controller;
 
 import com.luo.trade.repository.po.UserPO;
 import com.luo.trade.service.UserService;
+import com.luo.trade.util.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -17,9 +20,9 @@ public class UseController {
 
     @ResponseBody
     @GetMapping("/user")
-    public String getUser() {
+    public Map<String ,Object> getUser() {
         UserPO userPO = userService.queryUserPO(1);
-        return userPO.getUsername();
+        return AjaxResult.success(userPO);
     }
 
 }
