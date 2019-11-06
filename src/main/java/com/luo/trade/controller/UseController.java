@@ -1,0 +1,25 @@
+package com.luo.trade.controller;
+
+import com.luo.trade.repository.po.UserPO;
+import com.luo.trade.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/user")
+public class UseController {
+
+    @Autowired
+    private UserService userService;
+
+    @ResponseBody
+    @GetMapping("/user")
+    public String getUser() {
+        UserPO userPO = userService.queryUserPO(1);
+        return userPO.getUsername();
+    }
+
+}
