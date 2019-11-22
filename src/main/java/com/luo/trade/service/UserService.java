@@ -6,3 +6,9 @@ public interface  UserService {
 
     UserPO queryUserPO(int id);
 }
+
+
+
+
+
+

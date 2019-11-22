@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserRepository {
 
-//    @Autowired
-//    private UserPOMapper userPOMapper;
-//
-//    public UserPO queryUserPO(int id){
-//       return  userPOMapper.queryUserPo(id);
-//    }
+    @Autowired
+    private UserPOMapper userPOMapper;
+
+    public UserPO queryUserPO(int id){
+       return  userPOMapper.queryUserPo(id);
+    }
 }

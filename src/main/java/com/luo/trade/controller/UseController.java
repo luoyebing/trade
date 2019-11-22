@@ -2,8 +2,10 @@ package com.luo.trade.controller;
 
 import com.luo.trade.repository.po.UserPO;
 import com.luo.trade.service.UserService;
+import com.luo.trade.service.UserServiceImpl;
 import com.luo.trade.util.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,7 +18,7 @@ import java.util.Map;
 public class UseController {
 
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @ResponseBody
     @GetMapping("/user")
